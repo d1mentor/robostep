@@ -33,6 +33,27 @@
     <%= f.label :current_password %> <i>(Введите текущий пароль что бы применить изменения)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
+  
+  <div class="field">
+      <%= f.label :Имя %><br>
+      <%= f.text_field :name %>
+  </div>
+
+      
+
+    <div class="field">
+      <%= f.label :Никнейм %><br>
+      <%= f.text_field :username %>
+    </div>
+
+      
+
+    <div class="field">
+      <%= f.label :URL_аватарки %><br>
+      <%= f.text_field :avatar %>
+    </div>
+
+      <br>
 
   <div class="actions">
     <%= f.submit "Update" %>
