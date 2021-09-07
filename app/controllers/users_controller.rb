@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def index
-
+    @posts = Post.where("user_id = '#{current_user.id}'")
   end
 
   def set_current_user

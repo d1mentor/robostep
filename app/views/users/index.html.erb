@@ -8,7 +8,17 @@
     </div>
     <div class="col-md-8 text-center">
         <h3>Имя: <%= @user.name %></h3>
-        <h3>Дружит с нами c <%= @user.created_at.strftime('%m.%d.%Y') %> </h3>
+        <h3>Дружит с нами c <%= @user.created_at.strftime('%d.%m.%Y') %> </h3>
     </div>
+    
+    <% @posts.each do |post| %>
+
+    <div class="field">
+        <%= post.name %> <br>
+        <%= post.text %>
+    </div>
+
+    <% end %>
+
 </div>  
 </div>
