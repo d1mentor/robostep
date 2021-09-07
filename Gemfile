@@ -29,6 +29,10 @@ gem 'twitter-bootstrap-rails'
 
 gem 'execjs'
 
+gem 'carrierwave'
+
+gem 'rmagick'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

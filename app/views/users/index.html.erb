@@ -4,7 +4,7 @@
 </div>
 <div class="row">
     <div class="col-md-4">
-        <%= image_tag(user_avatar(@user), :class => "avatar") %>
+        <%= image_tag(user_avatar(@user).url, :class => "avatar") %>
     </div>
     <div class="col-md-8 text-center">
         <h3>Имя: <%= @user.name %></h3>
