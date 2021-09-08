@@ -14,12 +14,12 @@
 
     <div class="field">
     <%= f.label :Фотографии %> <br>
-    <%= f.file_field :photos, :style => "display: inline;" %>
+    <%= f.file_field :photos, multiple: true, :style => "display: inline;" %>
     </div> 
 
     <div class="field">
     <%= f.label :Файлы %> <br>
-    <%= f.file_field :files, :style => "display: inline;" %>
+    <%= f.file_field :files, multiple: true, :style => "display: inline;" %>
     </div> 
 
     <%= f.hidden_field :user_id %>

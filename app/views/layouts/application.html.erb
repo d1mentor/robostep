@@ -22,9 +22,9 @@
         <div style="margin-top: 20px; margin-bottom: 10px;">
           <% if user_signed_in? %>
           <span> @<%= current_user.username %></span>
-          <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+          <%= link_to 'Выйти', destroy_user_session_path, :method => :delete, :class => "link-button" %>
           <% else %>
-          <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+          <%= link_to 'Войти', new_user_session_path, :class => "link-button" %> или <%= link_to 'Зарегистрироваться', new_user_registration_path, :class => "link-button" %>
           <% end %>
         </div>
       </div>

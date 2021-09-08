@@ -1,17 +1,14 @@
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params[:post])
     @post.user_id = current_user.id
-
-    if @post.save
-      redirect_to root_url, notice: 'Пост успешно создан'
-    else
-      redirect_to root_url, notice: 'Пост почему-то не создался :('
-    end
+    @post.save!
+    redirect_to root_path
   end
 
   def edit
@@ -29,6 +26,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:user_id, :name, :text, :photos, :files)
+    params.require(:post).permit(:user_id, :name, :text, {photos: []}, :files)
   end
 end

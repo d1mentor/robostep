@@ -4,21 +4,44 @@
 </div>
 <div class="row">
     <div class="col-md-4">
-        <%= image_tag(user_avatar(@user).url, :class => "avatar") %>
+        <% if @user.avatar? %>
+            <%= image_tag(@user.avatar.url, :class => "avatar") %>
+        <% end %>   
     </div>
     <div class="col-md-8 text-center">
         <h3>Имя: <%= @user.name %></h3>
         <h3>Дружит с нами c <%= @user.created_at.strftime('%d.%m.%Y') %> </h3>
     </div>
-    
-    <% @posts.each do |post| %>
+</div>  
+</div>
 
-    <div class="field">
-        <%= post.name %> <br>
-        <%= post.text %>
-    </div>
+<div class="row text-center">
+    <%= link_to "Редактировать профиль", edit_users_url, :class => "link-button" %>
+
+    <%= link_to "Добавить пост", new_posts_url, :class => "link-button" %>
+</div>
+
+<div class="container user-block text-center buffer-top">
+    <div class="row">
+        <% @posts.each do |post| %>
+
+        <div class="post-block text-center">
+            <div class="post-name">
+                <h1><%= post.name %></h1> <br>
+            </div>
+            <div class="post-text">
+                <%= post.text %>
+            </div>
+
+            <div class="post-photo-block">
+                <% if !post.photos.nil? %>
+                    <% (Array post.photos).each do |photo| %>
+                        <%= image_tag photo.url, :class => "post-photo" %>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
 
     <% end %>
-
-</div>  
+    </div>  
 </div>

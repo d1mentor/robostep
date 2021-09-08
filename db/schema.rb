@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_084443) do
+ActiveRecord::Schema.define(version: 2021_09_08_094125) do
 
   create_table "posts", force: :cascade do |t|
     t.string "name"
     t.string "text"
-    t.json "photos"
+    t.string "photos"
     t.json "files"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
