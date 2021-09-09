@@ -21,6 +21,11 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def show
+    @user = User.find_by username: params[:username]
+    @posts = Post.where("user_id = '#{@user.id}'")
+  end
+
   private
 
   def change_user_data(params)

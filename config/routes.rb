@@ -7,5 +7,8 @@ Rails.application.routes.draw do
 
   get '/home', to: "users#index"
   get '/edit_my_profile', to: "users#edit"
+  get '/:username', to: 'users#show'
+
+
 
 end

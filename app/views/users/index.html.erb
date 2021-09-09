@@ -20,27 +20,29 @@
 
     <%= link_to "Добавить пост", new_posts_url, :class => "link-button" %>
 </div>
-
+        
 <div class="container user-block text-center buffer-top">
     <div class="row">
         <% @posts.each do |post| %>
 
-        <div class="post-block text-center">
-            <div class="post-name">
-                <h1><%= post.name %></h1> <br>
-            </div>
-            <div class="post-text">
-                <%= post.text %>
-            </div>
+        <div class="row">
+            <div class="col-md-4">
+               
+            </div>  
 
-            <div class="post-photo-block">
-                <% if !post.photos.nil? %>
-                    <% (Array post.photos).each do |photo| %>
-                        <%= image_tag photo.url, :class => "post-photo" %>
-                    <% end %>
-                <% end %>
+            <div class="col-md-8">
+                <div class="post-block">
+                    <div class="post-name">
+                        <h1><%= post.name %></h1> <br>
+                    </div>
+                    <div class="post-text">
+                        <p><%= post.text %></p> 
+                    </div>
+                </div>
             </div>
         </div>
+
+
 
     <% end %>
     </div>  
