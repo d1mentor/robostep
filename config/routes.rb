@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'comments/show'
+  get 'comments/index'
+  get 'comments/new'
+  get 'comments/create'
+  get 'comments/destroy'
   devise_for :users
   resource :users
   resource :posts
