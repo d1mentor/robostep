@@ -1,2 +1,35 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+        
+<div class="container user-block text-center buffer-top">
+    <div class="row">
+    	
+        <% @posts.each do |post| %>
+
+        <div class="row">
+            <div class="col-md-4">
+                
+               <div class="scroller">
+                    <% post.photos.each do |photo| %>
+                   <div>
+                        <%= image_tag(photo.url, :class => "post-photo") %>
+                    </div>
+                    <% end %>
+               </div>
+                
+            </div>  
+
+            <div class="col-md-8">
+                <div class="post-block">
+                    <div class="post-name">
+                        <h1><%= post.name %> @ <%= @authors.find_by(id: post.user_id).username %></h1>  <br>
+                    </div>
+                    <div class="post-text">
+                        <p><%= post.text %></p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <% end %>
+   
+    </div>  
+</div>

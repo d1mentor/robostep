@@ -33,6 +33,8 @@ gem 'carrierwave'
 
 gem 'rmagick'
 
+gem "jquery-slick-rails"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

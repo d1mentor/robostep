@@ -22,9 +22,19 @@ class PostsController < ApplicationController
   end
 
   def index
+    @posts = get_all_posts
+    @authors = posts_authors
   end
 
   private
+
+  def get_all_posts
+    posts = Post.all.order('created_at desc')
+  end
+
+  def posts_authors
+    User.all
+  end
 
   def post_params
     params.require(:post).permit(:user_id, :name, :text, {photos: []}, :files)

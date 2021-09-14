@@ -5,9 +5,10 @@ Rails.application.routes.draw do
 
   root :to => 'users#index'
 
+  get '/feed', to: "posts#index"
   get '/home', to: "users#index"
   get '/edit_my_profile', to: "users#edit"
-  get '/:username', to: 'users#show'
+  get '/user/:username', to: 'users#show'
 
 
 
