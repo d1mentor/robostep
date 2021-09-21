@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   get '/home', to: "users#index"
   get '/edit_my_profile', to: "users#edit"
   get '/user/:username', to: 'users#show'
-
-
+  get '/post/:id', to: 'posts#show'
 
 end

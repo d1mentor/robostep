@@ -68,6 +68,15 @@
   background: #aaacff;
   border: 0px;
   border-radius: 0px 20px 20px 0px;
+  height: 300px;
+ }
+
+ .post-block-full {
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #aaacff;
+  border: 0px;
+  border-radius: 20px 20px 20px 20px;
   min-height: 300px;
  }
 
@@ -78,6 +87,10 @@
  
  .post-text {
   padding: 10px;
+  max-height: 150px;
+  word-wrap: break-word;
+  overflow: auto;
+  text-overflow: ellipsis;
  }
 
 .link-button:link, .link-button:visited {
