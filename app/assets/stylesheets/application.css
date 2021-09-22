@@ -44,6 +44,28 @@
     border-radius: 100%;
  }
 
+ .comment-block{
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #aaacff;
+  border: 0px;
+  border-radius: 20px 20px 20px 20px;
+ }
+
+ .comment-text{
+  word-wrap: break-word;
+  overflow: auto;
+  text-overflow: ellipsis;
+ }
+ 
+ .avatar-min {
+    width: 64px;
+    height: 64px;
+    border: 1px solid;
+    border-radius: 100%;
+    margin-top: 20px;
+ }
+
  .avatar-image {
    width: 100%;
    height: 100%;
@@ -118,5 +140,9 @@
 .post-photo {
   width: 500px;
   height: 300px;
+}
+
+.buffer-both{
+  margin-bottom: 50px;
 }
 

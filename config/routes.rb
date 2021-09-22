@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  get 'comments/show'
-  get 'comments/index'
-  get 'comments/new'
-  get 'comments/create'
-  get 'comments/destroy'
+
   devise_for :users
   resource :users
   resource :posts
+  resources :comments 
+  
 
   root :to => 'users#index'
 
@@ -15,5 +13,6 @@ Rails.application.routes.draw do
   get '/edit_my_profile', to: "users#edit"
   get '/user/:username', to: 'users#show'
   get '/post/:id', to: 'posts#show'
+  get '/comment/:id', to: 'comments#show'
 
 end

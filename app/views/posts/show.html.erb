@@ -5,7 +5,8 @@
             <div class="col-md-12">
                 <div class="post-block-full">
                     <div class="post-name">
-                        <h1><%= @post.name %> @ <%= @authors.find_by(id: @post.user_id).username %></h1>  <br>
+                        <h1><%= @post.name %> @<%= @authors.find_by(id: @post.user_id).username %></h1>  <br>
+                        <%= link_to "Обсуждение", controller: "comments", action: "show", id: @post.id %> (<%= @post.comments.size %>)
                     </div>
                     <div class="post-text">
                         <p><%= @post.text %></p> 
