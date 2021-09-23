@@ -4,9 +4,8 @@
     	
         <% @posts.each do |post| %>
 
-        <div class="row">
-            <div class="col-md-4">
-                
+        <% if !post.photos.blank? %>
+            <div class="col-md-6">
                <div class="scroller">
                     <% post.photos.each do |photo| %>
                    <div>
@@ -14,13 +13,25 @@
                     </div>
                     <% end %>
                </div>
-                
-            </div>  
+            </div> 
 
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="post-block">
                     <div class="post-name">
-                        <h1><%= post.name %> @ <%= @authors.find_by(id: post.user_id).username %></h1>  <br>
+                        <h1><%= post.name %></h1> <br>
+                        <%= link_to "Читать полностью", controller: "posts", action: "show", id: post.id %>
+                    </div>
+                    <div class="post-text">
+                        <p><%= post.text %></p> 
+                    </div>
+                </div>
+            </div>
+            <% else %>
+            <div class="col-md-12">
+                <div class="post-block-full">
+                    <div class="post-name">
+                        <h1><%= post.name %></h1> <br>
+                        <%= link_to "Читать полностью", controller: "posts", action: "show", id: post.id %> <br>
                         <%= link_to "Обсуждение", controller: "comments", action: "show", id: post.id %> (<%= post.comments.size %>)
                     </div>
                     <div class="post-text">
@@ -28,7 +39,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+            <% end %>
 
     <% end %>
    
