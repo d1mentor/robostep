@@ -20,6 +20,7 @@
                     <div class="post-name">
                         <h1><%= post.name %></h1> <br>
                         <%= link_to "Читать полностью", controller: "posts", action: "show", id: post.id %>
+                        <%= link_to "Обсуждение", controller: "comments", action: "show", id: post.id %> (<%= post.comments.size %>)
                     </div>
                     <div class="post-text">
                         <p><%= post.text %></p> 
