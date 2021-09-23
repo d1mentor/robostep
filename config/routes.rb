@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get '/user/:username', to: 'users#show'
   get '/post/:id', to: 'posts#show'
   get '/comment/:id', to: 'comments#show'
+  get '/users_list', to: 'users#list'
 
 end

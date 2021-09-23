@@ -1,0 +1,19 @@
+<h1 class="text-center">Наши пользователи</h1>
+
+<div class="container">
+	<% @users.each do |user| %>
+		
+			<div class="row comment-block">
+				<div class="col-md-2 text-center">
+					<%= image_tag(user.avatar.url, :class => "avatar-min") %>
+					<h2>@  <%= user.username %></h2>
+				</div>
+				<div class="col-md-10 comment-text">
+					<h4>Посты: <%= user.posts.size %></h4> <br>
+					<h4>Комментарии: <%= Comment.where(user_id: user.id).size %></h4> <br>
+					<h4>Дружит с нами c <%= user.created_at.strftime('%d.%m.%Y') %></h4>
+				</div>
+			</div>
+		
+	<% end %>	
+</div>

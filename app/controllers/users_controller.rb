@@ -26,6 +26,10 @@ class UsersController < ApplicationController
     @posts = Post.where("user_id = '#{@user.id}'")
   end
 
+  def list
+    @users = User.all
+  end
+
   private
 
   def change_user_data(params)
