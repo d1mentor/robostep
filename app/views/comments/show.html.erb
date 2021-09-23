@@ -1,7 +1,7 @@
 
 <div class="container">
 	<div class="row text-center">
-		<h1><%= @post.name %> @ <%= @authors.find_by(id: @post.user_id).username %></h1>  <br>
+		<h1><%= @post.name %> @<%= @authors.find_by(id: @post.user_id).username %></h1>  <br>
 		<%= link_to "Читать полностью", controller: "posts", action: "show", id: @post.id %>		
 	</div>
 
@@ -9,7 +9,7 @@
 	<div class="row comment-block">
 		<div class="col-md-2 text-center">
 			<%= image_tag(User.find_by(id: com.user_id).avatar.url, :class => "avatar-min") %>
-			<h2>@  <%= User.find_by(id: com.user_id).username %></h2>
+			<h2>@<%= User.find_by(id: com.user_id).username %></h2>
 		</div>
 		<div class="col-md-10 comment-text">
 			<h4 class="buffer-top"><%= com.text %></h4>
