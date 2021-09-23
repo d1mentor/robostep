@@ -5,21 +5,7 @@
 		<%= link_to "Читать полностью", controller: "posts", action: "show", id: @post.id %>		
 	</div>
 
-	<% @comments.each do |com| %>
-	<div class="row comment-block">
-		<div class="col-md-2 text-center">
-			<%= image_tag(User.find_by(id: com.user_id).avatar.url, :class => "avatar-min") %>
-			<h2>@<%= User.find_by(id: com.user_id).username %></h2>
-		</div>
-		<div class="col-md-10 comment-text">
-			<h4 class="buffer-top"><%= com.text %></h4>
-		</div>
-	</div>
-	<% end %>
-
-
-
-	<div class="row text-center buffer-both">
+	<div class="row text-center buffer-both buffer-top">
 		<%= form_for @comment do |f| %>
 
 	    <div class="field">
@@ -36,7 +22,18 @@
 	    <% end %>
 	</div>
 
-	
+	<% @comments.reverse.each do |com| %>
+	<div class="row comment-block">
+		<div class="col-md-2 text-center">
+			<%= image_tag(User.find_by(id: com.user_id).avatar.url, :class => "avatar-min") %>
+			<h2>@<%= User.find_by(id: com.user_id).username %></h2>
+		</div>
+		<div class="col-md-10 comment-text">
+			<h4 class="buffer-top"><%= com.text %></h4>
+		</div>
+	</div>
+	<% end %>
+
 	<script type="text/javascript">
 		function checkParams() {
 			var text = $('#comment_text').val();
