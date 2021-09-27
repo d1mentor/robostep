@@ -15,12 +15,12 @@
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> символов минимум)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
+        <%= f.password_field :password, autocomplete: "Новый пароль" %>
       </div>
 
       <div class="field">
         <%= f.label :Подтвердить_пароль %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "Новый пароль" %>
       </div>
 
       <br>
